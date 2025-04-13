@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - Mombajipet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <header class="bg-green-700 text-white p-4 text-center text-2xl font-bold">
+    Welcome to Mombajipet Gram Panchayat
+  </header>
+  <section class="bg-cover bg-center h-64" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c153ca3?auto=format&fit=crop&w=1350&q=80');"></section>
+  <main class="p-6">
+    <div class="mb-6 bg-white p-4 rounded-xl shadow">
+      <h2 class="text-xl font-semibold mb-2">User Information</h2>
+      <p><strong>Username:</strong> <span id="user-info"></span></p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl shadow p-6">
+        <h3 class="text-xl font-semibold mb-2">House Tax</h3>
+        <p>Amount Due: ₹500</p>
+        <button class="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Pay Now</button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-6">
+        <h3 class="text-xl font-semibold mb-2">Electricity Bill</h3>
+        <p>Amount Due: ₹750</p>
+        <button class="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Pay Now</button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-6">
+        <h3 class="text-xl font-semibold mb-2">Water Bill</h3>
+        <p>Amount Due: ₹300</p>
+        <button class="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Pay Now</button>
+      </div>
+    </div>
+  </main>
+  <script>
+    const username = localStorage.getItem('username');
+    if (!username) {
+      window.location.href = "login.html";
+    } else {
+      document.getElementById('user-info').textContent = username;
+    }
+  </script>
+</body>
+</html>

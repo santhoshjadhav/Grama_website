@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - Mombajipet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1582185286680-4aa1bda2d063?auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-900 bg-opacity-50">
+  <div class="bg-white bg-opacity-90 p-8 rounded-2xl shadow-lg w-full max-w-md">
+    <h2 class="text-2xl font-bold text-center mb-6">Register</h2>
+    <form onsubmit="register(event)">
+      <input type="text" id="newUsername" placeholder="Username" class="w-full p-3 rounded border mb-4" required />
+      <input type="password" id="newPassword" placeholder="Password" class="w-full p-3 rounded border mb-4" required />
+      <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700">Register</button>
+    </form>
+    <p class="mt-4 text-center">Already have an account? <a href="login.html" class="text-green-600">Login</a></p>
+  </div>
+
+  <script>
+    function register(e) {
+      e.preventDefault();
+      const username = document.getElementById('newUsername').value;
+      const password = document.getElementById('newPassword').value;
+      localStorage.setItem('registeredUsername', username);
+      localStorage.setItem('registeredPassword', password);
+      alert("Registration successful! Please login.");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
